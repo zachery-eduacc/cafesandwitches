@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -23,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         {
             movespeed = 5f;
         }
+        
     }
 
     void FixedUpdate()
