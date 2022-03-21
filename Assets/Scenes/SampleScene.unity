@@ -296,6 +296,19 @@ MonoBehaviour:
   - {fileID: 599743149711697886, guid: c4445cef3c74792428d9dc1db3d11c25, type: 3}
   rbRoom:
   - {fileID: 443682862240813400, guid: 3c06979863392994784eac8200fa89fd, type: 3}
+  topend: {fileID: 7417895143784171702, guid: 194b2271faff38049bfa1e4a2d85ca6f, type: 3}
+  bottomend: {fileID: 9108847400767437027, guid: f07a981639317cd48aed12d53846399f, type: 3}
+  leftend: {fileID: 673570670416004825, guid: 99b834b4458f6d8418a2c0fd4eb08ac0, type: 3}
+  rightend: {fileID: 1213443816324069141, guid: f97e57e58b990a642bd4836d63c80288, type: 3}
+  center: {fileID: 7045953564658796974, guid: f916f84472917214fa6f5214dea90b3d, type: 3}
+  up: {fileID: 973819593168971760, guid: 7e8fdd42ee4b6ba4e97a0d75a46894a6, type: 3}
+  down: {fileID: 5671875129912879584, guid: a6c15ebcf4ea2dc4c92f32f9365c34b8, type: 3}
+  left: {fileID: 6426585746594262521, guid: 32435e11e47b9d244bac074d62b6f4ed, type: 3}
+  right: {fileID: 4268728563652679737, guid: 5f41ecee8c1f16844b520845064b701a, type: 3}
+  spawnnum: 0
+  nextspawn: 1
+  roomnum: 0
+  roommax: 10
 --- !u!4 &942105852
 Transform:
   m_ObjectHideFlags: 0
@@ -308,7 +321,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1882145442
 PrefabInstance:
@@ -323,7 +336,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101180476630756369, guid: e11cac96ccb9b864187cc50b84e23f39, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5101180476630756369, guid: e11cac96ccb9b864187cc50b84e23f39, type: 3}
       propertyPath: m_LocalPosition.x
