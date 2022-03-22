@@ -317,11 +317,57 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942105850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5629438, y: 0.32944494, z: -3.0188293}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1162944396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1162944398}
+  - component: {fileID: 1162944397}
+  m_Layer: 0
+  m_Name: EnemySpawn
+  m_TagString: esps
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1162944397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162944396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a67b3070f97954ba7fee6b099a06a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  esp: {fileID: 9193969759875543784, guid: aad4cf5a33e1e6440ad1267bca4f1639, type: 3}
+  enemytot: 0
+  basicmac: {fileID: 1794493387670331276, guid: d20f4ddb604289642ad2a7ffac453335, type: 3}
+--- !u!4 &1162944398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1162944396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1882145442
 PrefabInstance:
@@ -336,7 +382,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5101180476630756369, guid: e11cac96ccb9b864187cc50b84e23f39, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5101180476630756369, guid: e11cac96ccb9b864187cc50b84e23f39, type: 3}
       propertyPath: m_LocalPosition.x
@@ -389,7 +435,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2777123627423376321, guid: 02a73579bafe2794d8b47a35bdf3d96e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2777123627423376321, guid: 02a73579bafe2794d8b47a35bdf3d96e, type: 3}
       propertyPath: m_LocalPosition.x

@@ -22,12 +22,19 @@ public class RoomSpawner : MonoBehaviour
     public bool needright;
     public bool needleft;
     private bool active = true;
-    
+
+
+
+    //out of 100
+    private int enemynumpercent;
+    //number of enemies
+    private int enemynum;
     //number of this spawnpoint
     private int current;
     
 
     private RoomTemplates templates;
+    private EnemyTemplates enemy;
     private int rand;
     private bool Spawned = false;
     private float spawntimer = 3f;
@@ -39,13 +46,16 @@ public class RoomSpawner : MonoBehaviour
     Vector3 Vdown = new Vector3(0, -10, 0);
     Vector3 Vright = new Vector3(14 , 0, 0);
     Vector3 Vleft = new Vector3(-14 ,0,0);
+    Vector3 enemypos = new Vector3(0, 0, 0);
 
     void Start()
     {
         templates = GameObject.FindGameObjectWithTag("Rooms").GetComponent<RoomTemplates>();
+        enemy = GameObject.FindGameObjectWithTag("esps").GetComponent<EnemyTemplates>();
         templates.spawnnum += 1;
         current = templates.spawnnum;
-
+        
+        
         print("current is " + current);
 
         print("spawnnum is " + templates.spawnnum);
@@ -54,12 +64,8 @@ public class RoomSpawner : MonoBehaviour
 
         print("there are currently " + templates.roomnum + " rooms");
 
-        /*while (current == templates.nextspawn && Spawned == false && active == true)
-        {
-            print("this is spawn point " + current + " and my spawn value is " + Spawned);
-            Invoke("Spawn", 0f);
-            active = false;
-        }*/
+        
+        
     }
     void FixedUpdate()
     {
@@ -85,6 +91,7 @@ public class RoomSpawner : MonoBehaviour
         
         if (openingDirection == 0)
         {
+            
             if (needtop == true)
             {
                 //spawn up spawnpoint here
@@ -114,10 +121,56 @@ public class RoomSpawner : MonoBehaviour
                 Instantiate(templates.right, transform.position + Vright, transform.rotation);
 
             }
+            if (templates.roomnum > 0)
+            {
+                //0 - 100 because it is an uneven chance to spawn a certain number of enemies
+                enemynumpercent = Random.Range(0, 100);
+                if (enemynumpercent < 1)
+                {
+                    enemynum = 0;
+                }
+                else if (enemynumpercent < 10)
+                {
+                    enemynum = 1;
+                }
+                else if (enemynumpercent < 25)
+                {
+                    enemynum = 2;
+                }
+                else if (enemynumpercent < 50)
+                {
+                    enemynum = 3;
+                }
+                else if (enemynumpercent < 75)
+                {
+                    enemynum = 4;
+                }
+                else if (enemynumpercent < 90)
+                {
+                    enemynum = 5;
+                }
+                else if (enemynumpercent < 101)
+                {
+                    enemynum = 6;
+                }
 
+                for (int i = 0; i < enemynum; i++)
+                {
+                    print("now spawning enemy " + (i + 1));
+                    enemypos.x = Random.Range(-5, 5);
+                    enemypos.y = Random.Range(-3, 3);
+                    Instantiate(enemy.esp, this.transform.position + enemypos, enemy.esp.transform.rotation);
+                    enemy.enemytot += 1;
+                    print("there are now " + enemy.enemytot + " enemies");
+                }
+            }
             Spawned = true;
             templates.roomnum += 1;
+
+            
+
         }
+        
 
         if (Spawned == false && needcorner == true)
         {
